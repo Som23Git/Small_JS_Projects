@@ -14,4 +14,9 @@ console.log(Math.ceil((chrisDate.getTime()-today.getTime())/(one_day))+
 
 /* Output */
 
-/* 302 days left until Christmas! */
+/* 
+86400000
+1671906600000
+1645891195837
+302 days left until Christmas! 
+*/
