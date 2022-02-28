@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <div class="container input-1">
+        <label for="numberone">Enter 1st Number</label>
+        <input type="text" class="numberOne" placeholder="Enter Number One"></br>
+    </div>
+    <div class="container input-2">
+        <label for="numberTwo">Enter 2nd Number</label>
+        <input type="text" class="numberTwo" placeholder="Enter Number Two"><br>
+    </div>
+    <div class="container button">
+    <input type="button" class="btn" onclick="multiplyBy()" value="Multiply">
+    <input type="button" class="btn" onclick="divideBy()" value="Divide">
+    </div>
+    <div class="Result">
+        <p>The Result is : <br>
+            <span id = "result"></span>
+        </p>
+        </div>
+    </form>
+</body>
+</html>
