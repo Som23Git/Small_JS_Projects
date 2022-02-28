@@ -12,21 +12,21 @@
     <form>
     <div class="container input-1">
         <label for="numberone">Enter 1st Number</label>
-        <input type="text" class="numberOne" placeholder="Enter Number One"></br>
+        <input type="text" id="numberOne" placeholder="Enter Number One" value=""></br>
     </div>
     <div class="container input-2">
         <label for="numberTwo">Enter 2nd Number</label>
-        <input type="text" class="numberTwo" placeholder="Enter Number Two"><br>
+        <input type="text" id="numberTwo" placeholder="Enter Number Two" value=""><br>
     </div>
     <div class="container button">
-    <input type="button" class="btn" onclick="multiplyBy()" value="Multiply">
-    <input type="button" class="btn" onclick="divideBy()" value="Divide">
+    <input type="button" class="btn" onclick=multiplyBy() value="Multiply">
+    <input type="button" class="btn" onclick=divideBy() value="Divide">
     </div>
-    <div class="Result">
-        <p>The Result is : <br>
-            <span id = "result"></span>
-        </p>
-        </div>
+    <div>
+    <p>The Result is : <br>
+        <span id = "result"></span>
+    </p>
+    </div>
     </form>
 </body>
 </html>
