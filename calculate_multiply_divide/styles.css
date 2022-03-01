@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
+    width: fit-content;
 }
 
 body{
-    border: 20px solid #1b532c;
+    font-family: Roboto;
+    color: #fff;
+    border: 10px solid #424874;
     margin: 10px;
     width: 300px;
     display: flex;
     align-self: center;
     height: max-content;
+    position: absolute;
+}
+
+form{
+    background-color: #A6B1E1;
+    position: relative;
+    align-items: center;
 }
 
 .container{
-    margin-top: 20px;
-    padding: 20px 10px;
-    background-color: #2bc75a;
+    margin: 10px 60px;
+    padding: 2px 5px;
+    background-color: #A6B1E1;
     border-radius: 20px;
     width: fit-content;
     flex: 1;
@@ -22,4 +34,26 @@ body{
 
 .btn{
     border-radius: 20px;
+    border: none;
+    margin: 0px 7px;
+    box-shadow: 2px 2px 2px #DCD6F7;
 }
+
+.btn:hover {
+    background-color: #DCD6F7;
+}
+
+p {
+    width: 100%;
+    background-color:#A6B1E1 ;
+    border-radius: 20px;
+    padding: 10px 20px;
+    padding-right: 60px;
+    font-size: 15px;
+}
+
+.pDiv {
+    width: auto;
+}
+
+
