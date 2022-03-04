@@ -14,21 +14,45 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    border: 2px solid #002240;
+    font-size: 12px;
+    font-family: sans-serif, 'lato';
 }
 
-body{
+/* .box{
     display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+body{
+    display: block;
 }
 
 .container{
     margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 label, 
 input {
-    margin: 5px 0px;
+    margin: 5px 5px;
 }
 
 .container input:focus{
     outline: none;
 }
+
+.container input[type="button"]{
+    flex: 1 1 auto;
+    margin: 10px 20px;
+}
+
+.container input[type="text"]{
+    flex: 1fr 1fr auto;
+    margin: 10px 20px;
+}
+
