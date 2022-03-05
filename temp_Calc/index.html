@@ -10,15 +10,23 @@
 </head>
 <body>
     <div class="container form">
-        <label for="calcCelsius">Enter the Degree Celsius</label>
+    <span>
+        <label for="calcCelsius">Enter Celsius</label>
         <input type="text" value="1" id="calcCelsius" placeholder="Enter the Temp"></br>
-        <label for="calcFheit">Enter the Degree Fahrenheit</label>
+    </span>
+    <span>
+        <label for="calcFheit">Enter Fahrenheit</label>
         <input type="text" value="33.8" id="calcFheit" placeholder="Enter the Temp"></br>
+    </span>
     </div>
     <div class="container btn">
-        <input type="button" value="Calculate Celsius">
-        <input type="button" value="Calculate Fahrenheit">
+        <input type="button" value="Calculate Fahrenheit" onclick=celSius()>
+        <input type="button" value="Calculate Celsius" onclick=fahrHeit()>
     </div>
-    
+    <div class="pDiv">
+        <p>The Result is :
+        <span id = "result"></span>
+        </p>
+    </div>
 </body>
 </html>
