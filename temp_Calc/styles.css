@@ -28,6 +28,8 @@
 body{
     display: block;
     border: 2px solid #002240;
+    width: fit-content;
+    height: fit-content;
 }
 
 .container{
