@@ -28,8 +28,17 @@
 body{
     /* display: block; */
     border: 2px solid #002240;
-    width: fit-content;
+    max-width: 600px;
     height: fit-content;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.cover{
+    background-color: var(--primary-color);
+    /* display: flex; */
+    /*  align-items: center;     vertical */
+    /* justify-content: center;   horizontal */ 
 }
 
 .container{
@@ -40,6 +49,7 @@ body{
     /* flex-direction: row; */
     background-color: var(--primary-color);
 }
+  
 /* 
 input {
     margin: 5px 5px;
