@@ -5,7 +5,7 @@ function celSius() {
     var num1 = document.getElementById("calcCelsius").value;
     var resFheit = ((num1/5) * 9) + 32;
     var roundCels = resFheit.toFixed(2);
-    document.getElementById("result").innerHTML = roundCels + ' <span>&#8457;</span>';
+    document.getElementById("result").innerHTML = roundCels + ' <span>&#8457;</span>' + ' <i class="fa-regular fa-snowflake fa-1x"></i>';
 }
 
 function fahrHeit() {
