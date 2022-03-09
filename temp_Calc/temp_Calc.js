@@ -5,7 +5,15 @@ function celSius() {
     var num1 = document.getElementById("calcCelsius").value;
     var resFheit = ((num1/5) * 9) + 32;
     var roundCels = resFheit.toFixed(2);
-    document.getElementById("result").innerHTML = roundCels + ' <span>&#8457;</span>' + ' <i class="fa-regular fa-snowflake fa-1x"></i>';
+    var test;
+    if (roundCels < 50){
+        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fa fa-regular fa-snowflake fa-1x"></i>';
+    }else if(roundCels > 50){
+        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fas fa-solid fa-sun-bright fa-1x"></i>';
+    }else {
+        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fa-regular fa-sun-haze fa-1x"></i>';
+    }
+    document.getElementById("result").innerHTML = test;
 }
 
 function fahrHeit() {
