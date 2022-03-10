@@ -12,26 +12,22 @@
     <title>Temperature Calculator</title>
 </head>
 <body>
-    <section class="cover">
     <div class="container form">
-    <span>
-        <label for="calcCelsius">Enter Celsius</label>
-        <input type="text" value="1" id="calcCelsius" placeholder="Enter the Temp"></br>
-    </span>
-    <span>
-        <label for="calcFheit">Enter Fahrenheit</label>
-        <input type="text" value="33.8" id="calcFheit" placeholder="Enter the Temp"></br>
-    </span>
+        <div class="container input">
+            <label for="calcCelsius">Enter Celsius</label>
+            <input type="text" value="1" id="calcCelsius" placeholder="Enter the Temp"></br>
+            <label for="calcFheit">Enter Fahrenheit</label>
+            <input type="text" value="33.8" id="calcFheit" placeholder="Enter the Temp"></br>
+        </div>
+        <div class="container btn">
+            <input type="button" class="btn_1" value="Calculate Fahrenheit" onclick=celSius()>
+            <input type="button" class="btn_1" value="Calculate Celsius" onclick=fahrHeit()>
+        </div>
+        <div class="pDiv">
+            <p>The Result is :
+            <span id = "result"></span>
+            </p>
+        </div>
     </div>
-    <div class="container btn">
-        <input type="button" class="btn_1" value="Calculate Fahrenheit" onclick=celSius()>
-        <input type="button" class="btn_1" value="Calculate Celsius" onclick=fahrHeit()>
-    </div>
-    <div class="pDiv">
-        <p>The Result is :
-        <span id = "result"></span>
-        </p>
-    </div>
-</section>
 </body>
 </html>
