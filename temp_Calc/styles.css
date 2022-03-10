@@ -47,8 +47,9 @@ div{
 }
 
 .container > div{
-    justify-content: center;
-    align-self: center; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;  
     padding: 20px;
     background-color: var(--primary-color);
 }
@@ -59,7 +60,6 @@ input {
 } */
 
 .container input[type="button"]{
-    justify-content: space-between;
     height: 20px;
     border-radius: 5px;
     border: 3px inset var(--secondary-color);
@@ -67,10 +67,9 @@ input {
 }
 
 .container input[type="text"]{
-    flex: 1fr 1fr auto;
-    flex-direction: row;
-    justify-content: space-between ;
     margin: 10px 0px;
+    padding: 0px 5px;
+    border-radius: 5px;
 }
 
 .container input:focus{
@@ -78,10 +77,8 @@ input {
 }
 
 label {
-    width: auto;
-    height: 30px;
     font-size: 15px;
-    padding: 6px;
+    padding: 10px;
     color: #fff;
 }
 .pDiv{
