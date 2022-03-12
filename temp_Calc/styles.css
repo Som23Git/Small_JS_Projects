@@ -13,17 +13,25 @@ script{
     display: none;
 }
 
-/* Reset The Margin and Padding so that you can align as per your requirements */
- *{
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-    font-size: 10px;
-    font-family: sans-serif, "lato";
-} 
-
 title{
     font-size: 25px;
+    margin: 60px;
+    color: #002240;
+
+}
+
+/* Reset The Margin and Padding so that you can align as per your requirements */
+ *{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: sans-serif, "lato";
+    background-color: #EBD671;
 }
 
 /* .box{
@@ -33,20 +41,27 @@ title{
 } */
 
 body{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; */
     border: 10px solid #002240;
     max-width: 570px;
-    border-radius: 15px;    
+    border-radius: 15px;   
 } 
 
 div{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     width: 100%;
+}
+
+.container .form{
+     background: #fff;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
 }
 
 .container .input{
@@ -67,6 +82,17 @@ input {
     margin: 5px 5px;
 } */
 
+.btn_1:hover{
+    background-color: #002240;
+    opacity: 1;
+    color: #fff;
+    border: 3px inset var(--light-color);
+}
+
+.btn_1:active{
+    transform: translateY(1px);
+}
+
 .container input[type="button"]{
     height: 25px;
     border-radius: 5px;
@@ -77,8 +103,10 @@ input {
 
 .container input[type="text"]{
     margin: 10px 0px;
-    padding: 0px 5px;
+    padding: 3px 5px;
     border-radius: 5px;
+    background-color: #047aed;
+    color: #fff;
 }
 
 .container input:focus{
@@ -88,28 +116,24 @@ input {
 label {
     font-size: 15px;
     padding: 10px;
+    background-color: #047aed;
     color: #fff;
 }
 .pDiv{
     font-size: 20px;
     width: 100%;
     color: var(--light-color);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 } 
 
-p, #result{
+p, #result, span{
+    flex-direction: row;
     font-size: 15px;
+    background-color: #047aed;
 }
 
-
-.btn_1:hover{
-    background-color: #1c3fa8;
-    opacity: 1;
-    color: #fff;
-    border: 3px inset var(--light-color);
-}
-
-.btn_1:active{
-    transform: translateY(1px);
+i{
+    margin: 0px 3px;
+    background-color: #047aed;
 }
