@@ -6,12 +6,12 @@ function celSius() {
     var resFheit = ((num1/5) * 9) + 32;
     var roundCels = resFheit.toFixed(2);
     var test;
-    if (roundCels < 50){
+    if (roundCels <= 50){
         test = roundCels + ' <span>&#8457;</span>' + ' <i class="fa fa-regular fa-snowflake fa-1x"></i>';
-    }else if(roundCels > 50){
-        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fas fa-solid fa-sun-bright fa-1x"></i>';
+    }else if(roundCels > 50 && roundCels <=100){
+        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fa fa-cloud fa-1x"></i>';
     }else {
-        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fa-regular fa-sun-haze fa-1x"></i>';
+        test = roundCels + ' <span>&#8457;</span>' + ' <i class="fas fa-cloud-sun fa-1x"></i>';
     }
     document.getElementById("result").innerHTML = test;
 }
@@ -20,6 +20,29 @@ function fahrHeit() {
     var num2 = document.getElementById("calcFheit").value;
     var resCels = (((num2-32)/9) * 5);
     var roundFahr = resCels.toFixed(2);
-    document.getElementById("result").innerHTML = roundFahr + ' <span>&#8451;</span>';
+    if (roundFahr <= 50){
+        test = roundFahr + ' <span>&#8451;</span>' + ' <i class="fa fa-regular fa-snowflake fa-1x"></i>';
+    }else if(roundFahr > 50 && roundFahr <=75){
+        test = roundFahr + ' <span>&#8451;</span>' + ' <i class="fa fa-cloud fa-1x"></i>';
+    }else {
+        test = roundFahr + ' <span>&#8451;</span>' + ' <i class="fas fa-cloud-sun fa-1x"></i>';
+    }
+    document.getElementById("result").innerHTML = test;
+    let xTime = new Date();
+    let myObj = {
+        celsius: roundFahr,
+        time: xTime
+    };
+
+    let myObj_serialized = JSON.stringify(myObj);
+
+    localStorage.setItem("myObj",myObj_serialized);
+    let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+    console.log(myObj_deserialized);
+
+    document.getElementById("database").innerHTML =myObj_serialized + " </br>";
+
 }
+
+
     
