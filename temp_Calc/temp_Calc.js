@@ -40,7 +40,11 @@ function fahrHeit() {
     let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
     console.log(myObj_deserialized);
 
-    document.getElementById("database").innerHTML =myObj_serialized + " </br>";
+    let logArray = new Array();
+    logArray.push(myObj_serialized);
+    console.log(logArray);
+
+    document.getElementById("database").innerHTML = logArray;
 
 }
 
