@@ -28,25 +28,32 @@ function fahrHeit() {
         test = roundFahr + ' <span>&#8451;</span>' + ' <i class="fas fa-cloud-sun fa-1x"></i>';
     }
     document.getElementById("result").innerHTML = test;
+    
+    
+    
     let xTime = new Date();
     let myObj = {
+        fahrenheit: num2,
         celsius: roundFahr,
         time: xTime
     };
 
     let myObj_serialized = JSON.stringify(myObj);
 
-    localStorage.setItem("myObj",myObj_serialized);
+    let logArray = new Array();
+    logArray = [12,123];
+    logArray.push(myObj_serialized);
+    console.log(logArray);
+    console.log(logArray.length);
+    localStorage.setItem("myObj",logArray);
+
+    document.getElementById("database").innerHTML = document.getElementById("database").innerHTML + logArray + logArray.length + '</br>'; //To  store log lines
+
     let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
     console.log(myObj_deserialized);
 
-    let logArray = new Array();
-    logArray.push(myObj_serialized);
-    console.log(logArray);
-
-    document.getElementById("database").innerHTML = logArray;
+    
 
 }
-
 
     
