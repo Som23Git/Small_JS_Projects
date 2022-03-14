@@ -38,10 +38,10 @@ function fahrHeit() {
         time: xTime
     };
 
-    let myObj_serialized = JSON.stringify(myObj);
+    let myObj_serialized = JSON.stringify(myObj);      
 
     let logArray = new Array();
-    logArray = [12,123];
+    logArray = [12,44];
     logArray.push(myObj_serialized);
     console.log(logArray);
     console.log(logArray.length);
