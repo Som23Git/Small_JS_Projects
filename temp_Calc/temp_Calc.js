@@ -29,31 +29,41 @@ function fahrHeit() {
     }
     document.getElementById("result").innerHTML = test;
     
-    
-    
     let xTime = new Date();
     let myObj = {
         fahrenheit: num2,
         celsius: roundFahr,
         time: xTime
-    };
+    };    
 
-    let myObj_serialized = JSON.stringify(myObj);      
+    let myObj_serialized = JSON.stringify(myObj); 
+    localStorage.setItem("myObjNew", myObj_serialized);
 
-    let logArray = new Array();
-    logArray = [12,44];
-    logArray.push(myObj_serialized);
-    console.log(logArray);
-    console.log(logArray.length);
-    localStorage.setItem("myObj",logArray);
+    // let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+    // logArray.push(myObj_serialized);
+    // console.log(logArray);
+    // console.log(logArray.length);
+    // localStorage.setItem("myObj",logArray);
 
-    document.getElementById("database").innerHTML = document.getElementById("database").innerHTML + logArray + logArray.length + '</br>'; //To  store log lines
+    localStorage.setItem("myStoreData", document.getElementById("database").innerHTML = document.getElementById("database").innerHTML + myObj_serialized + '</br>'); //To  store log lines
+    console.log(localStorage.getItem("myStoreData"));
 
-    let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
-    console.log(myObj_deserialized);
+//     let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+
+//     localStorage.setItem("myObj",logArray);
+//     console.log(myObj_deserialized);
 
     
+// localStorage.setItem("Products_1", JSON.stringify(myObj));
+// //var cartItems = JSON.parse(localStorage.getItem("Products"));
+// var cartItems = JSON.parse(localStorage.getItem("Products_1"));
+// cartItems.items.push({"name": "Gold Car", "price": 10.99, "quantity": 1000});
+// console.log(cartItems);
+// localStorage.setItem("Products_2",JSON.stringify(cartItems.items));
+// //localStorage.setItem("Products_1", JSON.stringify(cartItems));
+// //var cartSItems = JSON.parse(localStorage.getItem("Products"));
 
 }
+
 
     
