@@ -10,8 +10,6 @@ function fahrHeit() {
         test = roundFahr + ' <span>&#8451;</span>' + ' <i class="fas fa-cloud-sun fa-1x"></i>';
     }
     document.getElementById("result").innerHTML = test;
-
-    
   
   let xTime = new Date();
     let myObj = {"dataItems":[{
@@ -22,7 +20,7 @@ function fahrHeit() {
   
   var storingData = JSON.stringify(myObj);
   
-  localStorage.setItem('NewObject',storingData);  
+  localStorage.setItem('NewObject',storingData);
   
   var storingArr = JSON.parse(localStorage.getItem('NewObject'));
   storingArr.dataItems.push({fahrenheit: 232,
