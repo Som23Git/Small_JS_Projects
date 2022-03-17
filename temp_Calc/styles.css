@@ -45,7 +45,7 @@ body{
     flex-direction: column;
     justify-content: center; 
     align-items: center; */  
-    border: 10px solid #d9534f;
+    /* border: 10px solid #d9534f; */
     max-width: 570px;
     border-radius: 15px; 
 } 
@@ -160,4 +160,38 @@ i{
     border: 2px solid #fff;
     background-color: transparent;
     font-size: 10px;
+}
+
+.database_class{
+    flex-direction: row;
+    background-color: #1c3fa8;
+    border: 10px solid #1c3fa8;
+    border-radius:15px;
+    color: var(--light-color);
+}
+
+#database_1{
+    padding: 10px;
+    height: 100%;
+    width: fit-content;
+    justify-content: center;
+    align-content: center;
+}
+
+.logsBtn_1{
+    padding: 15px;
+    margin-left: 10px;
+    height: 25px;
+    border-radius: 5px;
+    border: 3px inset var(--secondary-color);
+}
+
+.logsBtn_1:hover{
+    background-color: #002240;
+    opacity: 1;
+    color: #fff;
+}
+
+.logsBtn_1:active{
+    transform: translateY(2px);
 }
