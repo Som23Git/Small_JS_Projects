@@ -14,6 +14,20 @@ function celSius() {
         test = roundCels + ' <span>&#8457;</span>' + ' <i class="fas fa-cloud-sun fa-1x"></i>';
     }
     document.getElementById("result").innerHTML = test;
+
+    let xTime = new Date();
+    let myObj = {
+        celsius: num1,
+        fahrenheit: roundCels,
+        time: xTime
+    };    
+
+    let myObj_serialized = JSON.stringify(myObj); 
+    localStorage.setItem("myObjNew", myObj_serialized);
+
+    localStorage.setItem("myStoreData", document.getElementById("database").innerHTML = document.getElementById("database").innerHTML + myObj_serialized + '</br>'); //To  store log lines
+    console.log(localStorage.getItem("myStoreData"));   
+
 }
 
 function fahrHeit() {
@@ -64,6 +78,7 @@ function fahrHeit() {
 // //var cartSItems = JSON.parse(localStorage.getItem("Products"));
 
 }
+
 
 
     
