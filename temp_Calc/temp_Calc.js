@@ -19,11 +19,18 @@ function celSius() {
     let myObj = {
         celsius: num1,
         fahrenheit: roundCels,
-        time: xTime
+        time: xTime 
     };    
 
     let myObj_serialized = JSON.stringify(myObj); 
     localStorage.setItem("myObjNew", myObj_serialized);
+    console.log("myObj_serialized",myObj_serialized);
+    var dataItems = new Array();
+    dataItems = Object.values(myObj);
+    console.log("dataItems",dataItems);
+    localStorage.setItem("dataItems", dataItems);
+    
+
 
     localStorage.setItem("myStoreData", document.getElementById("database").innerHTML = document.getElementById("database").innerHTML + myObj_serialized + '</br>'); //To  store log lines
     console.log(localStorage.getItem("myStoreData"));   
