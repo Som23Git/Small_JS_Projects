@@ -15,7 +15,7 @@ script{
 
 title{
     font-size: 25px;
-    margin: 60px;
+    margin-top: 20px;
     color: #002240;
 
 }
@@ -32,6 +32,7 @@ title{
     font-size: 10px;
     font-family: sans-serif, "lato";
     background-color: #EBD671;
+    position: relative;
 }
 
 /* .box{
@@ -48,6 +49,7 @@ body{
     /* border: 10px solid #d9534f; */
     max-width: 570px;
     border-radius: 15px; 
+    min-height: 80vh;
 } 
 
 .section_1{
@@ -202,6 +204,7 @@ form > button:active{
     height: 25px;
     border-radius: 5px;
     border: 3px inset var(--secondary-color);
+    position:relative;
 }
 
 .logsBtn_1:hover{
