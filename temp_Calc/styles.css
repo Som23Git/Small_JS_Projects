@@ -179,7 +179,13 @@ form > button:active{
     border: 2px solid #fff;
     background-color: transparent;
     font-size: 10px;
+    height: 100px;
     visibility: hidden;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 .database_class{
