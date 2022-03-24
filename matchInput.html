@@ -7,21 +7,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inputMatching</title>
+    <style>
+        *,*::before,*::after{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            border: 3px solid #6c6c6c;
+            margin: 200px;
+            background-color: antiquewhite;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type=number]{
+            width: 50px;
+            height: 50px;
+            border: 5px solid red;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        input[type=button]{
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            padding-bottom: 20px;
+            font-size: x-large;
+            background-color: yellowgreen;
+            border: 5px inset red;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        span {
+            width: 100px;
+            height: 30px;
+            padding: 20px;
+            font-size: x-large;
+            background-color: rgb(89, 125, 192);
+            border: 5px inset red;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #dispResult2{
+            margin: 10px;
+            width: fit-content;
+            height: 10px;
+        }
+    </style>
     <script>
 
         //Creating a Random integer from 1 to 10
         function matchInput(){
-        for(i=1;i<=5;i++){
         var randInt = Math.floor(Math.random(10) * 10);
         console.log(randInt);
-        document.getElementById("dispResult").innerHTML = randInt;
+        if (document.getElementById("inpNum").value == randInt){
+            x = "Good Guess";
+        } else {
+            x = "Better Luck Next Time";
         }
+        document.getElementById("dispResult").innerHTML = randInt;
+        document.getElementById("dispResult2").innerHTML = x;
         }
 
     </script>
 </head>
 <body>
+    <div>
+    <input type="number" name="inpNum" id="inpNum" max="9" min="0" value="0">
+    <input type="button" value="GUESS" id="clickBtn" onclick="matchInput()">
     <span id="dispResult"></span>
-    <button id="clickBtn" onclick="matchInput()">Click Me</button>
+    <span id="dispResult2"></span>
+    </div>
 </body>
 </html>
