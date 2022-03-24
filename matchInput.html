@@ -1,0 +1,27 @@
+<!-- Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputMatching</title>
+    <script>
+
+        //Creating a Random integer from 1 to 10
+        function matchInput(){
+        for(i=1;i<=5;i++){
+        var randInt = Math.floor(Math.random(10) * 10);
+        console.log(randInt);
+        document.getElementById("dispResult").innerHTML = randInt;
+        }
+        }
+
+    </script>
+</head>
+<body>
+    <span id="dispResult"></span>
+    <button id="clickBtn" onclick="matchInput()">Click Me</button>
+</body>
+</html>
