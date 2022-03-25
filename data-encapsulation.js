@@ -16,4 +16,14 @@ outer()();
 // which declares a variable globally, or locally to an entire function regardless of block scope.
 
 
-// Concept Two where we use let
+// Concept Two where we use var and it takes the global scope
+
+function outer(){
+    // var x = 10;    Removing the variable declared within the scope to test the JS Engine refer the global scope.
+    return function inner(){
+        console.log(x);
+    }
+}
+
+var x = 12;         
+outer()();
