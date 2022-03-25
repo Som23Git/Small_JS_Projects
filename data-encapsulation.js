@@ -18,12 +18,14 @@ outer()();
 
 // Concept Two where we use var and it takes the global scope
 
-function outer(){
+function outer1(){
     // var x = 10;    Removing the variable declared within the scope to test the JS Engine refer the global scope.
-    return function inner(){
+    return function inner1(){
         console.log(x);
     }
 }
 
 var x = 12;         
-outer()();
+outer1()();
+
+//The output for the above Two Closure would be 10 and 12.
