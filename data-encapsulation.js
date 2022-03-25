@@ -29,3 +29,32 @@ var x = 12;
 outer1()();
 
 //The output for the above Two Closure would be 10 and 12.
+
+//Now, if you check the below "Count" -> the variable is encapsulated within the closure so whenever
+// someone declares the count variable outside the scope, it will NOT take it or will NOT override.
+// This method is also called as DATA HIDING.
+
+function outer2(){
+    var count = 2;
+    return function inner2(){
+        count++;
+        console.log(count);
+    }
+}
+
+outer2()();     
+//The reason why we have two functional brackets, 
+//it is to call the returned function within the outer2 function otherwise the inner function will not be called.
+
+
+// Let's create a Constructor so that the code will be scalable.
+
+function outer3(a){
+    var x = a;
+    return function inner3(){
+        x++;
+        console.log(x);
+    }
+}
+
+outer3(6)();
