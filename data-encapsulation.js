@@ -47,14 +47,25 @@ outer2()();
 //it is to call the returned function within the outer2 function otherwise the inner function will not be called.
 
 
-// Let's create a Constructor so that the code will be scalable.
+// // Let's create a Constructor so that the code will be scalable.
 
-function outer3(a){
-    var x = a;
-    return function inner3(){
-        x++;
-        console.log(x);
+// function outer3(a){
+//     var x = a;
+//     return function inner3(){
+//         x++;
+//         console.log(x);
+//     }
+// }
+
+// outer3(6)();
+
+// Returning a variable within a closure and can check whether it is accessible to the global scope.
+
+function a(){
+    var z = 100;
+    function b(){
+        console.log(z);
     }
 }
 
-outer3(6)();
+console.log(z);
