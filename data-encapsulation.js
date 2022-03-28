@@ -1,3 +1,5 @@
+
+
 //Closures
 
 // Concept One where we use var
@@ -63,9 +65,12 @@ outer2()();
 
 function a(){
     var z = 100;
-    function b(){
-        console.log(z);
+    return function b(){
+        console.log(z);     // This line will print Z because as it invokes lexical parameters from its parent i.e. a(), and forms a closure.
     }
 }
 
-console.log(z);
+a();
+console.log(z);     //This will not be printed and it will showcase it as not defined as per the lexical scope, it is under Global and cannot find any variable declarion for Z.
+
+
