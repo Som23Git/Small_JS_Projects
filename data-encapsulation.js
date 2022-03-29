@@ -74,3 +74,17 @@ a();
 console.log(z);     //This will not be printed and it will showcase it as not defined as per the lexical scope, it is under Global and cannot find any variable declarion for Z.
 
 
+function Counter(){
+    var count = 0;
+    this.incrementCounter = function(){
+        count++;
+        console.log(count);
+    }
+    this.decrementCounter = function(){
+        count--;
+        console.log(count);
+    }
+}
+
+var counter1 = new Counter();
+counter1.incrementCounter();
