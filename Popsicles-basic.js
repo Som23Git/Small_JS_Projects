@@ -46,3 +46,16 @@ popSicles(100,9);
 popSicles(99,101); 
 popSicles(99,100); 
 popSicles(99,99);
+
+/* OUTPUT */
+/*
+Give Away: There is only 1 sibling
+Give Away: We can give each sibling equally of 3 Popsicles
+Give Away: There is only 1 sibling
+Give Away: There is only 1 sibling
+Siblings are 10 - greater than the Popsicles - 9: Eat them yourself
+Siblings are 100 - greater than the Popsicles - 9: Eat them yourself
+Eat them yourself 2 is not equal to Zero
+Eat them yourself 2 is not equal to Zero
+Give Away: Both the Popsicles 99 and the number of Siblings 99 are same 
+*/
