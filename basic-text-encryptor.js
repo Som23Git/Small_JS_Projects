@@ -8,6 +8,7 @@ Complete the code by adding a print() method to the class, which should generate
 class Add {
     constructor(...words) {
         this.words = words;
+        console.log(typeof(this.words));        //To check what had been passed
     }
     //your code goes here
     print(){
@@ -20,6 +21,7 @@ class Add {
   }
   
   var x = new Add("hehe", "hoho", "haha", "hihi", "huhu");
+  console.log("x type: "+ typeof x);
   var y = new Add("this", "is", "awesome");
   var z = new Add("lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit");
   x.print();
