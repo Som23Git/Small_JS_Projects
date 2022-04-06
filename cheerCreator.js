@@ -24,3 +24,33 @@ Explanation
 If your team gains 3 yards you would cheer 'Ra!' three times for that play.
 
 --------------------------------------------------------------------------------------------------------------------- */
+
+cheerCreator = (x) => {
+    if(x > 10){
+        console.log(`Hurray, take a "High Five", the team had moved ${x} yards`);
+    }
+    else if(x<=10 && x > 1){
+        let text = "RA!"
+        console.log(`Let's Cheer the team - ${text.repeat(x)} the team had moved ${x} yards`);
+    }else{
+        console.log(`That's bad, "SHHHH" the team had moved only ${x} yard`);
+    }
+}
+
+cheerCreator(3);
+cheerCreator(12);
+cheerCreator(1);
+cheerCreator(0.2);
+cheerCreator(7);
+
+/* OUTPUT */
+/* 
+
+Let's Cheer the team - RA!RA!RA! the team had moved 3 yards
+Hurray, take a "High Five", the team had moved 12 yards
+That's bad, "SHHHH" the team had moved only 1 yards
+That's bad, "SHHHH" the team had moved only 0.2 yards
+Let's Cheer the team - RA!RA!RA!RA!RA!RA!RA! the team had moved 7 yards
+
+*/
+
