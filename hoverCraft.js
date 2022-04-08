@@ -24,11 +24,11 @@ If you only sold 5 hovercrafts, you spent 21,000,000 to operate but only made 15
 
 --------------------------------------------------------------------------------------------------------------------- */
 
-const inSur = 1000000;             //Insurance
+const inSur = 1000000;              //Insurance
 const buildCharge = 2000000;        //The amount to build an Hovercraft
 const sellingPrice = 3000000;       //Selling Price
 const craftsPerMonth = 10;          //Hovercrafts that are built in a month
-const minSellingUnits = 7;           //Minimum to be sold to attain Breakeven, post insurance
+const minSellingUnits = 7;          //Minimum to be sold to attain Breakeven, post insurance
 
 
 hoverCraft = (saleUnit) => {
