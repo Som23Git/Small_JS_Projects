@@ -28,25 +28,32 @@ const inSur = 1000000;             //Insurance
 const buildCharge = 2000000;        //The amount to build an Hovercraft
 const sellingPrice = 3000000;       //Selling Price
 const craftsPerMonth = 10;          //Hovercrafts that are built in a month
+const minSellingUnits = 7;           //Minimum to be sold to attain Breakeven, post insurance
 
 
 hoverCraft = (saleUnit) => {
     //Using Ternary Operator
     // (saleUnit >= craftsPerMonth) ? console.log(`Hurray, we are not in loss, we sold ${saleUnit} this month`) : console.log(`That's bad, we are in loss, we sold only ${saleUnit} this month`);
-    if (saleUnit > craftsPerMonth){
-        calcProfit = ((saleUnit - craftsPerMonth) * sellingPrice) - inSur;
+    if (saleUnit > minSellingUnits){
+        calcProfit = ((saleUnit - minSellingUnits) * sellingPrice) - inSur;
         console.log(`Hurray, we are in Profit, we sold ${saleUnit} this month for a profit of ${calcProfit} `);
-    } else if(saleUnit < craftsPerMonth){
-        calcTotalSelling = (((craftsPerMonth - saleUnit) * sellingPrice) - inSur);
+    } else if(saleUnit < minSellingUnits){
+        calcTotalSelling = ((saleUnit * sellingPrice) - inSur);
         calcLoss = (buildCharge * craftsPerMonth) - calcTotalSelling;
         console.log(`That's bad, we are in loss, we sold only ${saleUnit} this month for a loss of ${calcLoss} `)
-    } else{
-        calcTotalSelling = (craftsPerMonth == saleUnit) ? ((saleUnit - craftsPerMonth) * sellingPrice) - inSur : console.log("Invalid Input");
-        console.log(`That's bad, we are in loss, we sold only ${saleUnit} this month for a profit of ${calcTotalSelling} `)
+    } else if(saleUnit == minSellingUnits){
+        calcTotalSelling = (saleUnit * sellingPrice) - inSur;
+        console.log(`Thank God, we are not in loss, we sold ${saleUnit} this month and made breakeven of ${calcTotalSelling} `)
     }
 }
 
 hoverCraft(10);
-hoverCraft(8);
-hoverCraft(16);
+hoverCraft(7);
 hoverCraft(2);
+
+/* OUTPUT */
+/* 
+Hurray, we are in Profit, we sold 10 this month for a profit of 8000000 
+Thank God, we are not in loss, we sold 7 this month and made breakeven of 20000000 
+That's bad, we are in loss, we sold only 2 this month for a loss of 15000000 
+*/
