@@ -52,4 +52,19 @@ stringReversal("Malayalam");
   'l', 'a', 'M'
 ]
 
+OR
+
+using Join Method
+
+4
+ZMOS
+13
+skeeGrofskeeG
+7
+rettiwT
+8
+koobecaF
+9
+malayalaM
+
 */
