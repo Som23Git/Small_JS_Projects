@@ -10,7 +10,8 @@ function stringReversal(inputVal){
         temp[x-1] =  myArray[myArray.length - i];
         x = x - 1;
     }
-    console.log(temp);
+    var joinedArray = temp.join("");
+    console.log(joinedArray);
 }
 
 stringReversal("SOMZ");
