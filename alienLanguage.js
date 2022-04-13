@@ -23,8 +23,39 @@ If you flip howdy backwards you get ydwoh.
 
 */
 
+alienLanguage = (x) => {
+    var myArray = new Array();
+    var temp = new Array();
+    var myArray = x;
+    console.log(myArray.length);
+    var x = myArray.length;
+    for(i = x; i>0 ; i--){
+        temp[x-1] =  myArray[myArray.length - i];
+        x = x - 1;
+    }
+    var joinedArray = temp.join("");
+    console.log(joinedArray);
+}
 
 
+alienLanguage("howdy");
+alienLanguage("how");
+alienLanguage("are");
+alienLanguage("you?");
+alienLanguage("Alien");
 
+/* OUTPUT */
+/*
 
+5
+ydwoh
+3
+woh
+3
+era
+4
+?uoy
+5
+neilA
 
+*/
