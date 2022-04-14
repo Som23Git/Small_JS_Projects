@@ -33,23 +33,19 @@ No letters, or spaces
 */
 
 zipValidate = (x) => {
-    var checkType = x;
-    // var myArray = new Array();
-    // myArray = x;
-    // myArray = myArray.split("");
-    // for(let i = 0; i<myArray.length;i++){
-    //     console.log(myArray.length);
-        
-    //     if(myArray.length == 5 && typeof myArray[i] == "number"){
-    //         console.log(`true - ${myArray[i]}`);
-    //     }else{
-    //         console.log(`false - ${myArray[i]}`);
-    //     }
+    var getNumber = x;
     var storeValue = isNaN(x);
-    if(storeValue == false){
-        console.log(`VALID ZIPCODE`);
+    var counter = 0;
+    while (x > 0) {
+        x = (x - (x % 10)) / 10;
+        // console.log(x);
+        counter = counter + 1;
+        // console.log("Counter : " + counter);
+    }
+    if(storeValue == false && counter == 5){
+        console.log(`VALID ZIPCODE with ${counter} digits and all numbers - ${getNumber}`);
         }else{
-        console.log(`NOT VALID ZIPCODE`);
+        console.log(`NOT VALID ZIPCODE, kindly check the ${getNumber} code`);
     }
 }
 
@@ -57,3 +53,13 @@ zipValidate = (x) => {
 zipValidate(12345);
 zipValidate("12Z45");
 zipValidate(2345);
+
+/* OUTPUT */
+
+/*
+
+VALID ZIPCODE with 5 digits and all numbers - 12345
+NOT VALID ZIPCODE, kindly check the 12Z45 code
+NOT VALID ZIPCODE, kindly check the 2345 code
+
+*/
