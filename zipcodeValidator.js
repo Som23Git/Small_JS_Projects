@@ -45,14 +45,15 @@ zipValidate = (x) => {
     //     }else{
     //         console.log(`false - ${myArray[i]}`);
     //     }
-    if(isNaN(checkType) == true){
+    var storeValue = isNaN(x);
+    if(storeValue == false){
         console.log(`VALID ZIPCODE`);
-    }else{
-        console.log(`NOT A VALID ZIPCODE`);
+        }else{
+        console.log(`NOT VALID ZIPCODE`);
     }
 }
 
 
-
-
 zipValidate(12345);
+zipValidate("12Z45");
+zipValidate(2345);
