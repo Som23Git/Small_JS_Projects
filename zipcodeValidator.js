@@ -24,3 +24,35 @@ A valid zip code contains 5 digits, and no letters or spaces.
 The input is 6 characters long and contains letters, making it an invalid zip code.
 
 */
+
+/* Checks 
+
+Length - 5 characters
+No letters, or spaces
+
+*/
+
+zipValidate = (x) => {
+    var checkType = x;
+    // var myArray = new Array();
+    // myArray = x;
+    // myArray = myArray.split("");
+    // for(let i = 0; i<myArray.length;i++){
+    //     console.log(myArray.length);
+        
+    //     if(myArray.length == 5 && typeof myArray[i] == "number"){
+    //         console.log(`true - ${myArray[i]}`);
+    //     }else{
+    //         console.log(`false - ${myArray[i]}`);
+    //     }
+    if(isNaN(checkType) == true){
+        console.log(`VALID ZIPCODE`);
+    }else{
+        console.log(`NOT A VALID ZIPCODE`);
+    }
+}
+
+
+
+
+zipValidate(12345);
