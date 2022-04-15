@@ -55,3 +55,16 @@ isogramDetector("AXIOS");
 isogramDetector("Balcony");
 isogramDetector("Malayalam");
 isogramDetector("Youth");
+
+/* OUTPUT */
+/*
+
+Recurring Value Found in turbulence
+1
+There is no Recurring Values in AXIOS
+There is no Recurring Values in Balcony
+Recurring Value Found in Malayalam
+1
+There is no Recurring Values in Youth
+
+*/
