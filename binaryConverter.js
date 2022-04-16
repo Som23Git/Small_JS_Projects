@@ -28,10 +28,46 @@ binaryConverter = (a) => {
         console.log("y:" + y);
         sum = sum + y;
         x = Math.floor(x/2);
-        console.log("x:" + x);
+        // console.log("x:" + x);
     }
     console.log(sum + " Sum ");
 
 }
 
+binaryConverter(9);
+binaryConverter(4);
 binaryConverter(1);
+binaryConverter(5);
+binaryConverter(11);
+
+
+/* OUTPUT */
+
+/* 
+
+y:1
+y:0
+y:0
+y:1
+2 Sum 
+
+y:0
+y:0
+y:1
+1 Sum 
+
+y:1
+1 Sum 
+
+y:1
+y:0
+y:1
+2 Sum 
+
+y:1
+y:1
+y:0
+y:1
+3 Sum 
+
+*/
