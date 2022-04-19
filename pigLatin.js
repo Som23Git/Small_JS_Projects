@@ -24,3 +24,19 @@ The output should be the original sentence with each word changed so that they
 first letter is at the end and then -ay is added after that.
 
 --------------------------------------------------------------------------------------------------------------------- */
+
+pigLatin = (x) => {
+    var myArray = new Array();
+    var temp = new Array();
+    var myArray = x;
+    console.log(myArray.length);
+    var x = myArray.length;
+    for(i = x; i>(myArray.length - 1) ; i--){
+        temp[x-1] =  myArray[myArray.length - i];
+        x = x - 1;
+    }
+    var joinedArray = temp.join("");
+    console.log(joinedArray);
+}
+
+pigLatin("Howdy");
