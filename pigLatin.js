@@ -25,18 +25,60 @@ first letter is at the end and then -ay is added after that.
 
 --------------------------------------------------------------------------------------------------------------------- */
 
-pigLatin = (x) => {
+pigLatinOne = (x) => {
     var myArray = new Array();
-    var temp = new Array();
-    var myArray = x;
-    console.log(myArray.length);
-    var x = myArray.length;
-    for(i = x; i>(myArray.length - 1) ; i--){
-        temp[x-1] =  myArray[myArray.length - i];
-        x = x - 1;
-    }
-    var joinedArray = temp.join("");
-    console.log(joinedArray);
+    myArray = x;
+    myArray = myArray.split("");
+    // console.log(myArray);                            // [ 'H', 'o', 'w', 'd', 'y' ]
+    myArray[myArray.length] = myArray[0];
+    myArray.shift();
+    // console.log(myArray);                            // [ 'o', 'w', 'd', 'y', 'H' ]
+    myArray = myArray.join("");
+    console.log(myArray + "ay");                     // owdyHay
 }
 
-pigLatin("Howdy");
+pigLatinOne("Howdy");
+
+console.log("----------")
+
+pigLatinMulti = (x) => {
+    var sum = "";
+    var myArray = new Array();
+    myArray = x;
+    myArray = myArray.split(" ");
+    // console.log(myArray);                                [ 'nevermind', 'youve', 'got', 'them' ]                   
+    for(i = 0; i < myArray.length; i++){
+        var tempArray = new Array();
+        tempArray = myArray[i];
+        tempArray = tempArray.split("");
+        // console.log(tempArray);                          ['n', 'e', 'v','e', 'r', 'm','i', 'n', 'd']                        
+        tempArray[tempArray.length] = tempArray[0];
+        tempArray.shift();
+        // console.log(tempArray);                          ['e', 'v','e', 'r', 'm','i', 'n', 'd', 'n']           
+        tempArray = tempArray.join("");
+        sum = sum + (tempArray + "ay ");
+    }
+    console.log(sum);
+}
+
+pigLatinMulti("nevermind youve got them");
+pigLatinMulti("how are you?");
+pigLatinMulti("where is your planet");
+pigLatinMulti("do not worry");
+
+/* OUTPUT */
+/*
+
+Single Array Output
+
+owdyHay
+----------
+
+Multi-Array Output
+
+evermindnay ouveyay otgay hemtay 
+owhay reaay ou?yay 
+hereway siay ouryay lanetpay 
+oday otnay orryway 
+
+*/
