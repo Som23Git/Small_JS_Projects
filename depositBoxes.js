@@ -29,3 +29,20 @@ Explanation
 It will take you 20 minutes before you drill into the 4th box, which contains your item, the Declaration of Independence.
 
 */
+
+depositBoxes = (x,y) => {
+    var myArray = new Array();
+    myArray = x;
+    myArray = myArray.split(",");
+    console.log(myArray); 
+    var findItem = y;
+    for(let i = 1; i<=myArray.length; i++){
+    if(myArray[i] == findItem){
+        i++;
+        return console.log(`${y} - Item found within ${i * 5} mins`)
+    }
+}
+
+}
+
+depositBoxes('gold,diamonds,documents,Declaration of Independence,keys', 'Declaration of Independence');
