@@ -46,3 +46,18 @@ depositBoxes = (x,y) => {
 }
 
 depositBoxes('gold,diamonds,documents,Declaration of Independence,keys', 'Declaration of Independence');
+
+/* OUTPUT */
+/* 
+
+[
+  'gold',
+  'diamonds',
+  'documents',
+  'Declaration of Independence',
+  'keys'
+]
+
+Declaration of Independence - Item found within 20 mins
+
+*/
