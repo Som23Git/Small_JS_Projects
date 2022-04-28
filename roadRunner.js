@@ -44,8 +44,8 @@ roadRunner1 = (x,y,z) => {
     }
 }
 
-// roadRunner1(10,5,20);
-// roadRunner1(20,5,20);
+roadRunner1(10,5,20);
+roadRunner1(20,5,20);
 
 roadRunner2 = (x,y,z) => {
     var a = x;
