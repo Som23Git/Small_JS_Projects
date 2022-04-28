@@ -29,3 +29,43 @@ The roadrunner is safe because it took them 2 seconds to get to safety while the
 to the roadrunner in that same amount of time.
 
 */
+
+roadRunner1 = (x,y,z) => {
+    var a = x;
+    var b = y;
+    var c = z;
+    var k = a + 50;
+    var qR = (a/b);
+    var qC = (k/c);
+    if (qR < qC){
+        console.log(`Meep Meep - I reached the safety in ${qR} Secs`);
+    } else {
+        console.log(`Yum - I got you ${qC} Secs`);
+    }
+}
+
+// roadRunner1(10,5,20);
+// roadRunner1(20,5,20);
+
+roadRunner2 = (x,y,z) => {
+    var a = x;
+    var b = y;
+    var c = z;
+    var r = 0;
+    var q = 0;
+    var k = a + 50;
+    for(var i = 0; r <= a, q <= k; i++){
+        r = b*i;
+        console.log(r);
+        q = c*i;
+        console.log(q);
+        if(r == q & r,q != 0){
+           console.log(`Yum - I got you in ${i} Secs`);
+           break;
+        }
+    }   
+    console.log(`Meep Meep - I reached the safety in ${i} Secs`); 
+}
+
+roadRunner2(20,5,20);
+roadRunner2(10,5,20);
