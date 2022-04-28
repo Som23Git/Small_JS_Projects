@@ -64,7 +64,7 @@ roadRunner2 = (x,y,z) => {
            break;
         }
     }   
-    console.log(`Meep Meep - I reached the safety in ${i} Secs`); 
+    console.log(`Meep Meep - I reached the safety in ${i} Sec(s)`); 
 }
 
 roadRunner2(20,5,20);
