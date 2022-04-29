@@ -44,8 +44,8 @@ roadRunner1 = (x,y,z) => {
     }
 }
 
-roadRunner1(10,5,20);
-roadRunner1(20,5,20);
+// roadRunner1(10,5,20);
+// roadRunner1(20,5,20);
 
 roadRunner2 = (x,y,z) => {
     var a = x;
@@ -59,9 +59,11 @@ roadRunner2 = (x,y,z) => {
         console.log(r);
         q = c*i;
         console.log(q);
-        if(r == q & r,q != 0){
+        if(r,q != 0){
+            if(r == q){
            console.log(`Yum - I got you in ${i} Secs`);
            break;
+        }
         }
     }   
     console.log(`Meep Meep - I reached the safety in ${i} Sec(s)`); 
@@ -69,3 +71,32 @@ roadRunner2 = (x,y,z) => {
 
 roadRunner2(20,5,20);
 roadRunner2(10,5,20);
+
+/* OUTPUT */
+
+/* 
+
+0
+0
+5
+20
+10
+40
+15
+60
+20
+80
+Meep Meep - I reached the safety in 5 Sec(s)
+0
+0
+5
+20
+10
+40
+15
+60
+20
+80
+Meep Meep - I reached the safety in 5 Sec(s)
+
+*/
