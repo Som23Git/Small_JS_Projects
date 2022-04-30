@@ -9,7 +9,7 @@ calling the reject Directly
 */
 
 const a1 = new Promise((resolve, reject) => {
-    if(true){
+    if(false){
         resolve("Resolved Successfully");
     }else{
         reject("error");
@@ -20,9 +20,12 @@ let a2 = Promise.resolve('a2: Resolved');
 let a3 = () => Promise.resolve(null);
 let a4 = () => Promise.reject('a3 Reject');
 
+
 a1.then((result) => {
     console.log('a1: ', result);
-});
+}).catch((error)=> {
+    console.log("Caught Error", error)
+})
 a2.then((result) => {
     console.log('a2: ', result);
 });
