@@ -9,7 +9,8 @@ calling the reject Directly
 */
 
 const a1 = new Promise((resolve, reject) => {
-    if(false){
+    //if(false)
+    if(true){
         resolve("Resolved Successfully");
     }else{
         reject("error");
@@ -45,6 +46,10 @@ a1:  Resolved Successfully
 a2:  a2: Resolved
 a3:  null
 a4 Rejected with Error:  a3 Reject
+
+If the "if Condition is False" then,
+
+"Caught Error error" -> will be the output for a1.reject
 
 */
 
