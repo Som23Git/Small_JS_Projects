@@ -34,4 +34,19 @@ p2.then((x) => {
     return x;
 }).then((y) => {
     console.log(`Returned value from .then can be chained with the other then ${y * 2}`);
+}).catch((error) => {
+    console.log("caught error - ", error);
 });
+
+/* OUTPUT */
+/* 
+
+The Below Line Will Be Executed Immediately As There Are No Async Function Associated
+caught  5 
+
+The Below Line Will Be Executed by taking a time of 1500ms delay As "setTimeout" Is The Async Function
+
+We can get the value from the resolve function p2 Promise and can use it in .then here 4
+Returned value from .then can be chained with the other then 8
+
+*/
