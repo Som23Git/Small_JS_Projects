@@ -106,3 +106,47 @@ We can get the value from the resolve function p2 Promise and can use it in .the
 Returned value from .then can be chained with the other then 8
 
 */
+
+//Promise.all() -> When you want to run your code once all your promises had been resolved.
+
+let c1 = () => Promise.resolve("c1 is Resolved"); // Taking Promise as a Function
+let c2 = () => Promise.resolve("c2 is Resolved");
+let c3 = Promise.resolve("c3 is Resolved"); // Taking Promise directly as a Variable
+
+Promise.all([c1(),c2(),c3]).then((result)=>{
+    console.log(result);
+    console.log(result[1]);
+    console.log(result[0]);
+    console.log(result[2]);
+});
+
+/* OUTPUT 3 */
+/* 
+
+[ 'c1 is Resolved', 'c2 is Resolved', 'c3 is Resolved' ]
+c2 is Resolved
+c1 is Resolved
+c3 is Resolved
+
+*/
+
+//Promise.race() -> When you want the result only from first the resolved Promise
+
+let d1 = () => Promise.resolve("d1 is Resolved"); // Taking Promise as a Function
+let d2 = () => Promise.reject("d2 is Resolved");
+let d3 = Promise.resolve("d3 is Resolved"); // Taking Promise directly as a Variable
+let d4 = new Promise((resolve,reject) => {
+    setTimeout(resolve, 1000, "d4 is Resolved");
+});
+
+Promise.race([d1(),d2(),d3,d4]) // We can interchange the position of the array items so that it works first
+    .then((result)=>{
+        console.log('Winning: ', result);
+    })
+    .catch((result) => {
+        console.log('Failed: ', result);
+    });
+
+/* OUTPUT 4 */
+
+/* Winning:  d1 is Resolved */
