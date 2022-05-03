@@ -9,6 +9,17 @@ returning a promise which is fulfilled once the response is available. -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="script_1.js"></script> -->
+    <!-- <script src="sync-Vs-aSync.js"></script> -->
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: blueviolet;
+        }
+    </style>
+    <script src="promiseAll.js"></script>
+    <!-- <link rel="stylesheet" href="style_1.css"> -->
+    <!-- <link rel="stylesheet" href="style_2.css"> -->
     <title>Fetch Method</title>
 </head>
 <body>
@@ -16,28 +27,7 @@ returning a promise which is fulfilled once the response is available. -->
     <p>How to use Fetch() for AJAX</p>
     <div id="output">
         <pre></pre>
-    </div>
-    <script>
-        let url = "http://jsonplaceholder.typicode.com/comments?postId=42";
-
-        
-        fetch(url)
-
-        //Handle the response from fetch now
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            console.log(typeof data);
-            let str = JSON.stringify(data, null, '\t');
-            document.querySelector("#output").textContent = str;
-        })
-        .catch((error) => {
-            let nm = error.name;
-            let msg = error.message;
-            alert(`The catch error is ${nm} ${msg}`);
-        });
-    </script>
-    
+    </div>    
 </body>
 </html>
 
