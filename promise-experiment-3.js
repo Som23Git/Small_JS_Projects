@@ -150,3 +150,4 @@ Promise.race([d1(),d2(),d3,d4]) // We can interchange the position of the array 
 /* OUTPUT 4 */
 
 /* Winning:  d1 is Resolved */
+
