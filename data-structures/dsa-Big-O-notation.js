@@ -1,5 +1,7 @@
 //Big-O notation
-//Here, let's see about the basic understanding of O(n) using the basic for loop function.
+//Here, let's see about the basic understanding of Big-O notation in Time complexity using the basic for loop function.
+//for reference, there are two factors to consider when we check an efficiency of a code -> 1. Time Complexity and 2. Space Complexity.
+//Useful Resource - https://www.bigocheatsheet.com/ -- Must Check It OUT!!
 
 function logItems(n){
     for(let i=0; i<n;i++){
