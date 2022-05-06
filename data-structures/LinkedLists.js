@@ -113,7 +113,7 @@ class LinkedList{
             this.tail = newNode;
         }
         this.length++;
-        return this;
+        return this;        //The reason why we returning "this", because it will return the LinkedList Class completely.
     }
 };
 
