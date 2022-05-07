@@ -219,3 +219,27 @@ addLinkedList2.push(242);
 addLinkedList2.push(99);
 addLinkedList2.pop();
 
+/* addLinkedList2 OUTPUT with pop */
+
+/* 
+
+Below is the LinkedList when all the 4 values are added, i.e. 5->12->242->99->null
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 99, next: null}
+
+console.log(this) --> prints the below LinkedList eliminating the value 99
+
+LinkedList {head: Node, tail: Node, length: 3}
+head: Node {value: 5, next: Node}
+length: 3
+tail: Node {value: 242, next: null}
+
+return temp -> returns the below removed value from the list
+
+Node {value: 99, next: null}
+
+*/
+
