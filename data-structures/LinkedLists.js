@@ -482,7 +482,7 @@ addLinkedList4.push(242);
 addLinkedList4.push(99);
 addLinkedList4.shift();     //Removes Node in the first/Zeroth position in the List.
 
-/* addLinkedList4 OUTPUT with unshift() method */
+/* addLinkedList4 OUTPUT with shift() method */
 /*
 
 Before shift() method, the LinkedList was, 
@@ -506,6 +506,187 @@ next: null
 value: 5
 
 */
+
+/* ------------------------------------------------------------------------------------------------------------------------ 
+In addition to the LinkedList Constructor, push(), pop(), unshift(), and shift() method, let us add the get(index) and 
+set(index, value) method to get the Node from the Index and the replace/update the value in the specific Index
+
+NOTE-1: get(index) method is will directly iterate through the LinkedList and fetch the Node from the Index
+NOTE-2: set(index,value) method is will replace/update the value of the specific Node that the get() method returns.
+
+There are NO specific or edge cases except, we should keep in mind that the LinkedList Index cannot be less than 0 or more 
+than the length of the List.
+
+Let's reuse the same code until shift() method and append the get() and set() method
+------------------------------------------------------------------------------------------------------------------------ */
+
+//Step 1 Create a Node Class
+class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+//Step 2 Create a LinkedList Class with the Node Constructor
+class LinkedList{
+    constructor(value){
+        const newNode = new Node(value);
+        this.head = newNode;
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    //Step 3 Add the push() method within the LinkedList Class so we can add more Nodes in the List
+    push(value){
+        const newNode = new Node(value)
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    pop(){
+    //Scenario 1 where there is no values/elements in the List
+    if(!this.head) return undefined;     
+    
+    //Scenario 3 where there are multiple values/elements in the List
+    let temp = this.head;
+    let pre = this.head;
+
+    //This while loop, will increment the temp and pre variable until the temp.next === null, i.e. the last element
+    //Post that, the pre - will be assigned to the tail.
+    while(temp.next !== null){
+        pre = temp;
+        temp = temp.next;
+    }
+    this.tail = pre;
+    this.tail.next = null;
+    this.length--;
+
+    //Scenario 2 where there is only one value/element in the List
+    if(this.length === 0){
+        this.head = null;
+        this.tail = null;
+    }
+    
+    console.log(this);
+    return temp;
+    }
+
+    unshift(value){
+        //Create a new Node because we would need to insert the Node in the Zeroth Index of the List
+        const newNode = new Node(value);
+
+        //Scenario 1 where there is No Nodes in the List
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+
+        //Scenario 2 where there are Nodes in the List
+        }else{
+            newNode.next = this.head; //Still the newNode is not a part of LinkedList so, we cannot use this.newNode.next which will throw an error
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    shift(){
+
+        //Scenario 1 where there is no values/elements in the List
+        if(!this.head) return undefined;
+
+        //Scenario 3 where there are multiple values/elements in the List
+        let temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+
+        //Scenario 2 where there is only one value/element in the List
+        if(this.length === 0){
+            this.tail = null;
+        }
+        console.log(this);
+        return temp;        
+    }
+
+    get(index){
+        if(index < 0 || index >= this.length) return undefined;
+        let temp = this.head;
+        for(let i = 0; i < index; i++){
+            temp = temp.next;
+        }
+        console.log(this);
+        return temp;
+    }
+
+    set(index,value){
+        //The reason why we use the below statement of using get(index) method is to stop creating an another set of code
+        //To execute the same set of operation so we can call get() method using "this" keyword as it is under the same Constructor Class
+        let temp = this.get(index);
+
+        //As there are two possibilities from get() method -> 1. It returns Undefined or 2. It returns the Node
+        //If the value of temp is true i.e. if it pointing to any Node then, the if will be executed.
+        if(temp){
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
+};
+
+//To test,
+
+let addLinkedList5 = new LinkedList(5);
+addLinkedList5.push(12);
+addLinkedList5.push(242);
+addLinkedList5.push(99);
+addLinkedList5.get(3);     //It gets the Node which is in the Index of 3
+addLinkedList5.set(3,29);
+
+/* addLinkedList5 OUTPUT with get() method */
+/*
+
+Using console.log -> We got the complete LinkedList before returning the Node of the Index
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 99, next: null}
+
+return this -> Returned the Node of the Index that we passed in the argument or parameter.
+
+Node {value: 99, next: null}
+
+** The returned value from the get() method was assigned to temp variable in the set() method **
+
+Before using the set() method, the tail or the Index 3 was having the value 99
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 99, next: null}
+
+Post using the set() method, the tail or the Index 3 is replaced by the value 29
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 29, next: null}
+
+*/
+
+
+
+
+
+
 
 
 
