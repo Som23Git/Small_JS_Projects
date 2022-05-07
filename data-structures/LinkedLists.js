@@ -326,7 +326,7 @@ class LinkedList{
 
         //Scenario 2 where there are Nodes in the List
         }else{
-            this.newNode.next = this.head;
+            newNode.next = this.head;
             this.head = newNode;
         }
         this.length++;
