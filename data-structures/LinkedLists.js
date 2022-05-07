@@ -207,8 +207,7 @@ class LinkedList{
     
     console.log(this);
     return temp;
-
-}
+    }
 };
 
 //To test,
@@ -242,4 +241,124 @@ return temp -> returns the below removed value from the list
 Node {value: 99, next: null}
 
 */
+
+/* ------------------------------------------------------------------------------------------------------------------------ 
+In addition to the LinkedList Constructor, push() method, and pop() method, let us add the unshift() method to add new Nodes in
+the LinkedList
+
+NOTE: unshift(value) method is adding the NODE in the Zeroth Index of the List with a value.
+
+Points to Understand in unshift(), this had got only 2 straight scenarios,
+
+1. Where the LinkedList got null elements i.e. there are NO elements in the List
+2. Where the LinkedList got multiple elements and we should add the Node in the first of the list.
+
+Let's reuse the same code until pop() method and append the unshift() method code,
+------------------------------------------------------------------------------------------------------------------------ */
+
+//Step 1 Create a Node Class
+class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+//Step 2 Create a LinkedList Class with the Node Constructor
+class LinkedList{
+    constructor(value){
+        const newNode = new Node(value);
+        this.head = newNode;
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    //Step 3 Add the push() method within the LinkedList Class so we can add more Nodes in the List
+    push(value){
+        const newNode = new Node(value)
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    pop(){
+    //Scenario 1 where there is no values/elements in the List
+    if(!this.head) return undefined;     
+    
+    //Scenario 3 where there are multiple values/elements in the List
+    let temp = this.head;
+    let pre = this.head;
+
+    //This while loop, will increment the temp and pre variable until the temp.next === null, i.e. the last element
+    //Post that, the pre - will be assigned to the tail.
+    while(temp.next !== null){
+        pre = temp;
+        temp = temp.next;
+    }
+    this.tail = pre;
+    this.tail.next = null;
+    this.length--;
+
+    //Scenario 2 where there is only one value/element in the List
+    if(this.length === 0){
+        this.head = null;
+        this.tail = null;
+    }
+    
+    console.log(this);
+    return temp;
+    }
+
+    unshift(value){
+        //Create a new Node because we would need to insert the Node in the Zeroth Index of the List
+        const newNode = new Node(value);
+
+        //Scenario 1 where there is No Nodes in the List
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+
+        //Scenario 2 where there are Nodes in the List
+        }else{
+            this.newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+};
+
+//To test,
+
+let addLinkedList3 = new LinkedList(5);
+addLinkedList3.push(12);
+addLinkedList3.push(242);
+addLinkedList3.push(99);
+addLinkedList3.unshift(23);     //Adds Node in the first/Zeroth position in the List.
+
+/* addLinkedList3 OUTPUT with unshift() method */
+/*
+
+Before unshift() method, the LinkedList was, 
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 99, next: null}
+
+Post calling unshift(23) method, the head got updated
+
+LinkedList {head: Node, tail: Node, length: 5}
+head: Node {value: 23, next: Node}
+length: 5
+tail: Node {value: 99, next: null}
+
+*/
+
 
