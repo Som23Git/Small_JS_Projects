@@ -639,6 +639,56 @@ class LinkedList{
         }
         return false;
     }
+
+    /* ------------------------------------------------------------------------------------------------------------------------ 
+    In addition to the get(index) and set(index, value) method, let us add insert(value,index) and remove(index) 
+
+    NOTE-1: insert(value,index) method is will directly iterate through the LinkedList and fetch the Node from the Index
+    NOTE-2: remove(index) method is will remove the value of the specific Node from the LinkedList
+
+    There are NO specific or edge cases except, we should keep in mind that the LinkedList Index cannot be less than 0 or more 
+    than the length of the List.
+    And, we can re-use the other methods in the same code for efficient reusability
+    ------------------------------------------------------------------------------------------------------------------------ */
+
+
+    insert(index, value) {
+        //Scenario 1
+        if(index < 0 || index > this.length) return false
+        //Scenario 2
+        if(index === this.length) return this.push(value)
+        //Scenario 3
+        if(index === 0) return this.unshift(value)
+
+        //Scenario 4
+        
+        const newNode = new Node(value)
+        const temp = this.get(index - 1)
+        newNode.next = temp.next
+        temp.next = newNode
+        this.length++
+        return true
+    }
+
+    remove(index) {
+        //Scenario 1
+        if(index < 0 || index >= this.length) return undefined
+        //Scenario 2
+        if(index === 0) return this.shift()
+        //Scenario 3
+        if(index === this.length - 1) return this.pop()
+
+        //Scenario 4
+
+        const before = this.get(index - 1)
+        const temp = before.next
+
+        before.next = temp.next
+        temp.next = null
+        this.length--
+        return temp
+    }
+
 };
 
 //To test,
@@ -649,6 +699,8 @@ addLinkedList5.push(242);
 addLinkedList5.push(99);
 addLinkedList5.get(3);     //It gets the Node which is in the Index of 3
 addLinkedList5.set(3,29);
+addLinkedList5.insert(2,149);
+addLinkedList.remove(3);
 
 /* addLinkedList5 OUTPUT with get() method */
 /*
@@ -681,6 +733,8 @@ length: 4
 tail: Node {value: 29, next: null}
 
 */
+
+
 
 
 
