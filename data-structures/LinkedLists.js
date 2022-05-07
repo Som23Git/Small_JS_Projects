@@ -326,7 +326,7 @@ class LinkedList{
 
         //Scenario 2 where there are Nodes in the List
         }else{
-            newNode.next = this.head;
+            newNode.next = this.head; //Still the newNode is not a part of LinkedList so, we cannot use this.newNode.next which will throw an error
             this.head = newNode;
         }
         this.length++;
