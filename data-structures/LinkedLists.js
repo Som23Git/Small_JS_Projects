@@ -361,4 +361,151 @@ tail: Node {value: 99, next: null}
 
 */
 
+/* ------------------------------------------------------------------------------------------------------------------------ 
+In addition to the LinkedList Constructor, push() method, pop(), unshift() method let us add the shift() method to remove
+new Nodes from the LinkedList
+
+NOTE: shift() method is removing the NODE from the Zeroth Index of the List.
+
+Points to Understand in shift(), this had got only 3 scenarios similar to pop() method
+
+1. Where the LinkedList got null elements i.e. there are NO elements in the List
+2. Where the LinkedList got only one element i.e. the both head and tail are pointing to that element.
+3. Where the LinkedList got multiple elements and we should remove the last in the list i.e. the head and tail are pointing 
+to different elements or NODES.
+
+Let's reuse the same code until unshift() method and append the shift() method code,
+------------------------------------------------------------------------------------------------------------------------ */
+
+//Step 1 Create a Node Class
+class Node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+//Step 2 Create a LinkedList Class with the Node Constructor
+class LinkedList{
+    constructor(value){
+        const newNode = new Node(value);
+        this.head = newNode;
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    //Step 3 Add the push() method within the LinkedList Class so we can add more Nodes in the List
+    push(value){
+        const newNode = new Node(value)
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        }else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    pop(){
+    //Scenario 1 where there is no values/elements in the List
+    if(!this.head) return undefined;     
+    
+    //Scenario 3 where there are multiple values/elements in the List
+    let temp = this.head;
+    let pre = this.head;
+
+    //This while loop, will increment the temp and pre variable until the temp.next === null, i.e. the last element
+    //Post that, the pre - will be assigned to the tail.
+    while(temp.next !== null){
+        pre = temp;
+        temp = temp.next;
+    }
+    this.tail = pre;
+    this.tail.next = null;
+    this.length--;
+
+    //Scenario 2 where there is only one value/element in the List
+    if(this.length === 0){
+        this.head = null;
+        this.tail = null;
+    }
+    
+    console.log(this);
+    return temp;
+    }
+
+    unshift(value){
+        //Create a new Node because we would need to insert the Node in the Zeroth Index of the List
+        const newNode = new Node(value);
+
+        //Scenario 1 where there is No Nodes in the List
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+
+        //Scenario 2 where there are Nodes in the List
+        }else{
+            newNode.next = this.head; //Still the newNode is not a part of LinkedList so, we cannot use this.newNode.next which will throw an error
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    shift(){
+
+        //Scenario 1 where there is no values/elements in the List
+        if(!this.head) return undefined;
+
+        //Scenario 3 where there are multiple values/elements in the List
+        let temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+
+        //Scenario 2 where there is only one value/element in the List
+        if(this.length === 0){
+            this.tail = null;
+        }
+        console.log(this);
+        return temp;        
+    }
+};
+
+//To test,
+
+let addLinkedList4 = new LinkedList(5);
+addLinkedList4.push(12);
+addLinkedList4.push(242);
+addLinkedList4.push(99);
+addLinkedList4.shift();     //Removes Node in the first/Zeroth position in the List.
+
+/* addLinkedList4 OUTPUT with unshift() method */
+/*
+
+Before shift() method, the LinkedList was, 
+
+LinkedList {head: Node, tail: Node, length: 4}
+head: Node {value: 5, next: Node}
+length: 4
+tail: Node {value: 99, next: null}
+
+console.log -> Post calling shift() method, the head got updated
+
+LinkedList {head: Node, tail: Node, length: 3}
+head: Node {value: 12, next: Node}
+length: 3
+tail: Node {value: 99, next: null}
+
+return this -> Removed the value 5
+
+Node {value: 5, next: null}
+next: null
+value: 5
+
+*/
+
+
 
