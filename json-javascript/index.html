@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Json file in Javascript by converting the JSON object to JSON String and then convert it to JS Object using JSON Parse()</title>
+    <script>
+        let products = (`
+     [{
+      "name": "Bottle",
+      "Color": "Blue",
+      "Manufacture":{
+          "date": "2003\/01\/05",
+          "saleDate": "2003\/02\/09"
+      },
+      "salePrice": 200
+  },
+  {
+    "name": "Key",
+    "Color": "Green",
+    "Manufacture":{
+        "date": "2003\/01\/05",
+        "saleDate": "2003\/02\/10"
+    },
+    "salePrice": 20
+}
+]`);
+
+console.log(JSON.parse(products));
+console.log(JSON.parse(products)[0].name);
+console.log(JSON.parse(products)[1].Manufacture);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

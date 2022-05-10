@@ -1,0 +1,21 @@
+{
+  "Products": [{
+      "name": "Bottle",
+      "Color": "Blue",
+      "Manufacture":{
+          "date": "2003\/01\/05",
+          "saleDate": "2003\/02\/09"
+      },
+      "salePrice": 200
+  },
+  {
+    "name": "Key",
+    "Color": "Green",
+    "Manufacture":{
+        "date": "2003\/01\/05",
+        "saleDate": "2003\/02\/10"
+    },
+    "salePrice": 20
+}
+]
+}
