@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+
+    <script>
+        function main()
+    {
+        var x = "ffffff";
+        var y = "000000";
+        x = "#" + x;
+        y = "#" + y;
+        console.log(x,y);
+
+        if (document.getElementById("inpNum").value == x){
+            x = y;
+        } else {
+            y = x;
+        }
+        document.getElementById("dispResult").innerHTML = x;
+        document.getElementById("dispResult2").innerHTML = y;
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="number" name="inpNum" id="inpNum" max="9" min="0" value="0">
+        <input type="button" value="GUESS" id="clickBtn" onclick="main()">
+        <span id="dispResult"></span>
+        <span id="dispResult2"></span>
+        </div>
+</body>
+</html>
+
+
+
+function main(){
+    var x = "ffffff";
+    var y = "000000";
+    x = "#" + x;
+    y = "#" + y;
+    console.log(x,y);
+}
+
+main();
