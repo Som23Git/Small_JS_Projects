@@ -1,0 +1,19 @@
+<!-- Adding Elements Dynamically using JavaScript -->
+
+<html> 
+<head> 
+<title>Dynamic Elements Creation</title> 
+<script type="text/javascript"> 
+    function addNode() { 
+    var newP = document.createElement("p"); 
+    var textNode = document.createTextNode("This is a new text node"); 
+    newP.appendChild(textNode); 
+    document.getElementById("firstP").appendChild(newP); 
+    } 
+</script> 
+</head> 
+<body> 
+    <button Onclick="addNode()">Click To Add</button> 
+    <p id="firstP">firstP<p> 
+</body> 
+</html>
