@@ -1,11 +1,17 @@
 // alert('hello world');
 
+/* --------------------------------------------------------------------------*/
+//Console properties
+/* --------------------------------------------------------------------------*/
+
 console.log("This is warn");
 console.info("This is just information log");
 console.warn("this is warning");
 console.error("This is error");
 
-
+/* --------------------------------------------------------------------------*/
+// var, let, and const
+/* --------------------------------------------------------------------------*/
 // Const and Let - Block level scope, you can define this within a function/closure.
 let currentAge = 30;
 currentAge = 31;
@@ -21,7 +27,9 @@ var x = 10;
 varFunc();
 console.log(x);
 
+/* --------------------------------------------------------------------------*/
 // Datatype -> String, Numbers, Boolean, null, undefined, symbol.
+/* --------------------------------------------------------------------------*/
 
 const name = "John";
 const isAge = 30;
@@ -37,7 +45,9 @@ console.log(typeof rating);
 console.log(typeof isX); // It will show as Object but this is Not right
 console.log(typeof isY);
 
+/* --------------------------------------------------------------------------*/
 // Concatenation
+/* --------------------------------------------------------------------------*/
 
 console.log(name + " is my friend and I'm " + isAge ); // John is my friend and I'm 30
 
@@ -58,8 +68,9 @@ console.log(stringValue.toUpperCase().substring(0,9)); // HELLO WOR
 console.log(stringValue.split(' ')); // ['Hello', 'World!']
 console.log(stringValue.split('')); // ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!']
 
+/* --------------------------------------------------------------------------*/
 // Arrays - variables that hold multiple values
-
+/* --------------------------------------------------------------------------*/
 
 // You need to use Array Constructor and define it. 
 // JavaScript Array does not matter whether it is a Number datatype or string
@@ -100,8 +111,10 @@ console.log(fruits); ['Grapes', 'technology', 'code', 'Javascript', 'testing', '
 console.log(Array.isArray(fruits)); // true
 console.log(Array.isArray(stringValue)); // false
 
+/* --------------------------------------------------------------------------*/
 // Object Literals -> It is just a key value pairs
 // declaring a object called Person with the key value pairs
+/* --------------------------------------------------------------------------*/
 
 const person = {
     firstName: "John",
@@ -170,9 +183,10 @@ console.log(todos);
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON); // [{"id":1,"text":"This is a one","isCompleted":true},{"id":2,"text":"This is a two","isCompleted":false},{"id":3,"text":"This is a three","isCompleted":true},{"id":4,"text":"This is a four","isCompleted":false}]
 
-
+/* --------------------------------------------------------------------------*/
 // Loops
 // For Loops
+/* --------------------------------------------------------------------------*/
 
 //Simple for() loop
 
@@ -263,10 +277,12 @@ for(let anythingTodo of todos){
     console.log(anythingTodo.text);
 }
 
+/* --------------------------------------------------------------------------*/
 // The High Order Array needs a callback function
 // forEach -> which just loops through the arrays
 // map -> which will allow us to create a new array from an array
 // filter -> which will allow us to create a new array based on a condition
+/* --------------------------------------------------------------------------*/
 
 // forEach vanilla JS function
 
@@ -306,7 +322,9 @@ const todoFilterPlusMap = todos.filter(function(todo){
 
 console.log(todoFilterPlusMap); // ['This is a one', 'This is a three']
 
-
+/*----------------
+    Conditionals 
+-----------------*/
 
 
 
