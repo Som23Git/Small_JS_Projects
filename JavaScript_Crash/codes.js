@@ -116,24 +116,177 @@ const person = {
 
 }
 
+
+
 console.log(person); // {firstName: 'John', lastName: 'Doe', age: 30, hobbies: Array(3), address: {…}}
 console.log(person.address); // {street: '5th main st', city: 'New York', state: 'New York'}
 console.log(person.firstName, person.age, person.address); // John 30 {street: '5th main st', city: 'New York', state: 'New York'}
 console.log(person.hobbies[2]); // reading
 console.log(person.address.city); // New York
 
-// You can also "pull out" the values using the De-Structuring 
+// You can also "pull out" the values using the De-Structuring, this is a part of advanced ES6
 // For object within an object like the value "address"
 
 const { firstName, lastName, age, address: {street, city, state} } = person;
 console.log(firstName); // John
 console.log(street); // 5th main st
 
+// To add a property or key value within an object, note you would need to use the equal operator ( = ) 
+
+person.email = "johndoe@gmail.com";
+console.log(person); // {firstName: 'John', lastName: 'Doe', age: 30, hobbies: Array(3), address: {…}, email: 'johndoe@gmail.com' }
+
+// Arrays of Objects
+
+const todos = [
+    {
+        id: 1,
+        text: 'This is a one',
+        isCompleted: true
+    },
+    {
+        id: 2,
+        text: 'This is a two',
+        isCompleted: false
+    },
+    {
+        id: 3,
+        text: 'This is a three',
+        isCompleted: true
+    },
+    {
+        id: 4,
+        text: 'This is a four',
+        isCompleted: false
+    }
+];
+
+console.log(todos);
+
+// [IMPORTANT] 
+// Convert to JSON directly so you can send this data to the SERVERS
+// Notice the text string ' '(single quotes) had been changed to " " (double quotes)
+
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON); // [{"id":1,"text":"This is a one","isCompleted":true},{"id":2,"text":"This is a two","isCompleted":false},{"id":3,"text":"This is a three","isCompleted":true},{"id":4,"text":"This is a four","isCompleted":false}]
 
 
+// Loops
+// For Loops
+
+//Simple for() loop
+
+for(let i=0;i<10;i++){
+    console.log(i);
+}
+
+/* 
+
+OUTPUT
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+*/
+
+//Simple While loop
+
+let i = 1;
+while(i<5){
+    console.log(i);
+    i++; // this is important otherwise the while loop will stuck/hang in the same condition eventually you'll end up in OOM(out of memory)
+}
+
+/* 
+
+OUTPUT
+
+0
+1
+2
+3
+4
+
+*/
+
+// Loop through Arrays
+
+console.log(`The length of the todos array - ${todos.length}`); 
+// Output --> The length of the todos array - 4
+
+for(i=0;i<todos.length;i++){
+    console.log(i);
+}
+
+/* 
+
+OUTPUT
+
+0
+1
+2
+3
+
+*/
+
+// Log the todos.text -> the text within the todos - Not Recommended
+
+for(i=0;i<todos.length;i++){
+    console.log(todos[i].text);
+}
+
+/* 
+
+OUTPUT
+
+This is a one
+This is a two
+This is a three
+This is a four
+
+*/
 
 
+// This is the recommended way of looping all the objects with an Array
+// todo -> just a random variable, we can use even x or y or anythingToDo
+// todos -> It is the array
 
+for(let anythingTodo of todos){
+    console.log(anythingTodo.text);
+}
+
+// The High Order Array needs a callback function
+// forEach -> which just loops through the arrays
+// map -> which will allow us to create a new array from an array
+// filter -> which will allow us to create a new array based on a condition
+
+// forEach vanilla JS function
+
+todos.forEach(function(todo){
+    console.log(todo.text);
+});
+
+// forEach arrow function
+
+todos.forEach = (x) => {
+    console.log(x.id);
+};
+
+// map function -> This will return an array of the texts alone and will map it to an array named "todoText"
+
+const todoText = todos.map(function(todo){
+    return todo.text;
+});
+
+console.log(todoText); // ['This is a one', 'This is a two', 'This is a three', 'This is a four']
 
 
 
