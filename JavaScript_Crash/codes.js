@@ -164,7 +164,7 @@ const todos = [
 console.log(todos);
 
 // [IMPORTANT] 
-// Convert to JSON directly so you can send this data to the SERVERS
+// Convert array of objects to JSON directly so you can send this data to the SERVERS
 // Notice the text string ' '(single quotes) had been changed to " " (double quotes)
 
 const todoJSON = JSON.stringify(todos);
@@ -288,7 +288,23 @@ const todoText = todos.map(function(todo){
 
 console.log(todoText); // ['This is a one', 'This is a two', 'This is a three', 'This is a four']
 
+// filter function
 
+const todoCompleted = todos.filter(function(todo){
+    return todo.isCompleted === true;
+});
+
+console.log(todoCompleted); // [{'This is a one'}, {'This is a three'}]
+
+// You can use map() and filter together to filter and create a new array
+
+const todoFilterPlusMap = todos.filter(function(todo){
+    return todo.isCompleted === true;
+}).map(function(todo){
+    return todo.text;
+});
+
+console.log(todoFilterPlusMap); // ['This is a one', 'This is a three']
 
 
 
