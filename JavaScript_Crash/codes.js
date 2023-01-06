@@ -375,7 +375,9 @@ switch(color){
         break;
 };
 
+/* --------------------------------------------------------------------------*/
 // Functions
+/* --------------------------------------------------------------------------*/
 
 //Sum the two numbers using function()
 
@@ -408,6 +410,7 @@ function sum2(num1 = 2,num2 = 5){
 sum2(); // Eventhough there is no arguments passed within the function call, it had produced the result using the default integers or values assigned to them.
 
 // Arrow function
+// Always, the function variable will be assigned to a datatype "const"
 
 const addNums = (num1,num2) => {
     sum = num1+num2;
@@ -416,6 +419,31 @@ const addNums = (num1,num2) => {
 }
 
 addNums(3,23);
+
+
+/* --------------------------------------------------------------------------*/
+// Constructor -> It is used to create an object with the existing properties.
+// Good practice to name constructor functions with an upper-case first letter.
+// Objects of the same type and properties are created by calling the constructor function with the new keyword
+/* --------------------------------------------------------------------------*/
+
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dobString = dob; // Takes Date as a String Value
+    this.dobDate = new Date(dob); // Converts the Date String Value to the actual Date value. new Date() it is a built-in constructor.
+};
+
+// Try adding a object using the new keyword
+
+const person1 = new Person('john','manikkam','03-06-1980');
+console.log(person1); // Person {firstName: 'john', lastName: 'manikkam', dobString: '03-06-1980', dobDate: Thu Mar 06 1980 00:00:00 GMT+0530 (India Standard Time)}
+
+const person2 = new Person('Raja','vikraman','03-06-1996');
+console.log(person2); // Person {firstName: 'Raja', lastName: 'vikraman', dobString: '03-06-1996', dobDate: Wed Mar 06 1996 00:00:00 GMT+0530 (India Standard Time)}
+console.log(person2.dobDate.getFullYear()); // 1996
+
+
 
 
 
