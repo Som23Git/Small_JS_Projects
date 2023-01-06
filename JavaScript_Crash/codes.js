@@ -327,7 +327,95 @@ console.log(todoFilterPlusMap); // ['This is a one', 'This is a three']
 -----------------*/
 
 
+//If Statement
 
+const isA = 10;
+const isB = "10";
+const isC = 12;
+
+// '==' using double equal to 
+if(isA == 10 && isB == 10){
+    console.log('A is 10 & B is 10' );
+}
+
+// '===' using triple equal to 
+
+if(isA === 10 && isB === 10){
+    console.log('A is 10 & B is 10');
+} else{
+    console.log('No, something is Not equal to 10');
+}
+
+// Else if
+
+if(isA == 10 && isC > 12 ){
+    console.log('A is 10 & B is 10' );
+}else if(isB == 10){
+    console.log('B is 10' );
+}else {
+    console.log('No, something is Not equal to 10' );
+}
+
+// If (Ternary Operator)
+
+const color = (isC > 10) ? "red" : "yellow";
+console.log(color);
+
+// Switch Statement
+
+switch(color){
+    case 'red':
+        console.log('Color is Red');
+        break;
+    case 'blue':
+        console.log('Color is blue');
+        break;
+    default:
+        console.log('Color is NOT Red or Blue');
+        break;
+};
+
+// Functions
+
+//Sum the two numbers using function()
+
+function sum(num1,num2){
+    sum = num1+num2;
+    console.log(sum); // 3
+    return sum;
+};
+
+sum(1,2);
+
+//Sum the two numbers using function() without passing any arguments in the function(), you can use any default integers
+
+function sum1(num1,num2){
+    sum = num1+num2;
+    console.log(sum); // NaN
+    return sum;
+};
+
+sum1();
+
+// Assign a default integers to avoid prompting "NaN" -> Not a Number
+
+function sum2(num1 = 2,num2 = 5){
+    sum = num1+num2;
+    console.log(sum); // 7
+    return sum;
+};
+
+sum2(); // Eventhough there is no arguments passed within the function call, it had produced the result using the default integers or values assigned to them.
+
+// Arrow function
+
+const addNums = (num1,num2) => {
+    sum = num1+num2;
+    console.log(sum); // 26
+    return sum;
+}
+
+addNums(3,23);
 
 
 
