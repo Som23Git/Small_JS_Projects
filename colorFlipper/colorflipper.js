@@ -1,18 +1,7 @@
 function changeColor(){
     const btnColor = document.querySelector('#button1');
     console.log(btnColor);
-
-
-  //Using if Statement
-    // if(btnColor.style.background == 'red'){
-    //     btnColor.style.background = 'green';
-    //     console.log(`changed to red`);
-    // }else{
-    //     btnColor.style.background = 'red';
-    //     console.log(`changed to green`);
-    // }
-
-    // Using Switch() statement
+   // Using Switch() statement
     switch(btnColor.style.background){
         case 'greenyellow':
             btnColor.style.background = 'blue';
@@ -34,5 +23,21 @@ function changeColor(){
             btnColor.style.background = 'greenyellow';
             console.log('Color is NOT Red or Blue');
         break;
+    }
+};
+
+
+function changeColorButton(){
+    const btnColor = document.querySelector('#button2');
+    console.log(btnColor);
+
+ // Using if Statement
+if(btnColor.style.background == 'green')
+    {
+    btnColor.style.background = 'red';
+    console.log(`changed to red`);
+    }else{
+    btnColor.style.background = 'green';
+    console.log(`changed to green`);
     }
 };
