@@ -503,8 +503,7 @@ getFullName:ƒ ()
 
 */
 
-// In ES6, i.e. ES2015 they have introduced "Classes" but it does the same thing as the above code.
-
+// In ES6, i.e. ES2015 they have introduced "Classes" but it does the same thing as the above code
 // Classes - Similar to Constructor
 
 class PersonClass{
