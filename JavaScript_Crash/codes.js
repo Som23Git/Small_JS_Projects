@@ -425,6 +425,7 @@ addNums(3,23);
 // Constructor -> It is used to create an object with the existing properties.
 // Good practice to name constructor functions with an upper-case first letter.
 // Objects of the same type and properties are created by calling the constructor function with the new keyword
+// @drawbacks Refer to the drawbacks below
 /* --------------------------------------------------------------------------*/
 
 function Person(firstName, lastName, dob){
@@ -432,9 +433,15 @@ function Person(firstName, lastName, dob){
     this.lastName = lastName;
     this.dobString = dob; // Takes Date as a String Value
     this.dobDate = new Date(dob); // Converts the Date String Value to the actual Date value. new Date() it is a built-in constructor.
+    this.getBirthYear = function (){
+        return this.dobDate.getFullYear(); // Note: the getFullYear() method will only work with the Date object i.e. dobDate otherwise it will not recognize the dobString
+    }
+    this.getFullName = function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
 };
 
-// Try adding a object using the new keyword
+// Try adding a object using the new keyword i.e. "Instantiate Object"
 
 const person1 = new Person('john','manikkam','03-06-1980');
 console.log(person1); // Person {firstName: 'john', lastName: 'manikkam', dobString: '03-06-1980', dobDate: Thu Mar 06 1980 00:00:00 GMT+0530 (India Standard Time)}
@@ -443,6 +450,95 @@ const person2 = new Person('Raja','vikraman','03-06-1996');
 console.log(person2); // Person {firstName: 'Raja', lastName: 'vikraman', dobString: '03-06-1996', dobDate: Wed Mar 06 1996 00:00:00 GMT+0530 (India Standard Time)}
 console.log(person2.dobDate.getFullYear()); // 1996
 
+console.log(person2.getBirthYear()); // 1996
+console.log(person2.getFullName()); // Raja vikraman
+
+console.log(person1); 
+
+/* 
+
+// @drawbacks 
+
+When `console.log(person1)` -> Below is the output but you can see the functions getBirthYear() and getFullName() within it which is NOT a cleanest way to write CONSTRUCTORS, you push those function() into the prototype object.
+
+Person {firstName: 'john', lastName: 'manikkam', dobString: '03-06-1980', dobDate: Thu Mar 06 1980 00:00:00 GMT+0530 (India Standard Time), getBirthYear: ƒ, …}
+dobDate: Thu Mar 06 1980 00:00:00 GMT+0530 (India Standard Time) {}
+dobString: "03-06-1980"
+firstName: "john"
+getBirthYear: ƒ ()
+getFullName: ƒ ()
+
+*/
+
+// The cleanest way to write a CONSTRUCTOR, instead of adding those functions within the CONSTRUCTOR, we can add it in the Prototype object.
+// Recommended
+
+
+function PersonConstructor(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = dob;
+};
+
+PersonConstructor.prototype.getBirthYear = function(){
+    return this.dob.getFullYear();
+};
+
+PersonConstructor.prototype.getFullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+};
+
+const person3 = new PersonConstructor('john','manikkam','03-06-1980');
+console.log(person3);
+
+/*
+
+PersonConstructor {firstName: 'john', lastName: 'manikkam', dob: '03-06-1980'}
+dob:"03-06-1980"
+firstName:"john"
+lastName: "manikkam"
+[[Prototype]]: Object
+getBirthYear:ƒ ()
+getFullName:ƒ ()
+
+*/
+
+// In ES6, i.e. ES2015 they have introduced "Classes" but it does the same thing as the above code.
+
+// Classes - Similar to Constructor
+
+class PersonClass{
+    constructor(firstName,lastName,dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+    }
+
+    //Instead of writing as .prototype syntax for methods() or functions()
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const person4 = new PersonClass('john','manikkam','03-06-1980');
+console.log(person4);
+
+/*
+
+PersonClass {firstName: 'john', lastName: 'manikkam', dob: '03-06-1980'}
+dob:"03-06-1980"
+firstName:"john"
+lastName: "manikkam"
+[[Prototype]]: Object
+constructor: class PersonClass
+getBirthYear:ƒ ()
+getFullName:ƒ ()
+
+*/
 
 
 
