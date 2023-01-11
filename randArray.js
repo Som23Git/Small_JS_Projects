@@ -1,5 +1,5 @@
 const prompt=require("prompt-sync")({sigint:true}); 
-var array1 = [1,2,3,5,6,5];
+var array1 = [1,2,3,5,6,'hello'];
 
 
 function randArray(){
