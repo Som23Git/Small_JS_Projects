@@ -22,4 +22,8 @@ this is an array - 1,2,3,5,6,5
 this is an random number - 2
 This is the random array - 3
 
+this is an array - 1,2,3,5,6,hello
+this is an random number - 5
+This is the random array - hello
+
 */
