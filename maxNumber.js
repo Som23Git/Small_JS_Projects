@@ -11,7 +11,7 @@ for(i=0;i<5;i++){
         console.log(array);
     }
     console.log(`this is the console log of ${array}`);
-    y = Math.max(...array)
+    y = Math.max(...array);
     console.log(`The maximum number is ${y}`);
 }
 
