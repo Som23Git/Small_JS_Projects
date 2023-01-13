@@ -1,4 +1,4 @@
-// JavaScript program to find the area of a triangle
+// JavaScript program to find the area of a triangle using the Heron's forumula
 const prompt=require("prompt-sync")({sigint:true}); 
 
 const side1 = parseInt(prompt('Enter side1: '));
