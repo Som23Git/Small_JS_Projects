@@ -2,7 +2,7 @@
 # run covid-19 files 
 # git add, comit and push
 
-dir=/Users/som/Downloads/Testing_files/Small_JS_Projects/scripts
+dir=/Users/som/Downloads/Testing_files/Small_JS_Projects
 papermill=/opt/homebrew/bin/papermill
 notifier=/opt/homebrew/bin/terminal-notifier
 
@@ -10,6 +10,6 @@ cd $dir
 git add . 
 git commit -m "update" 
 git push origin main
-$notifier -title Cron-jobs -subtitle "Daily Updated" -message "Completed" -open "https://mybinder.org/v2/gh/shinokada/covid-19-stats/master"
+$notifier -title Cron-jobs -subtitle "Daily Updated" -message "Completed"
 now=$(date)
 echo "Cron job update completed at $now"
