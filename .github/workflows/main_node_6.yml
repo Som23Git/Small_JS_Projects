@@ -1,0 +1,28 @@
+name: Add node_api.js
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  push:
+    branches:
+      - main
+      
+jobs:
+  add_node_api:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Add node_api.js
+      run: |
+        if: github.event.schedule == '0 7 * * *'
+        echo "console.log('Hello from node_api.js');" > new_node.js
+    - name: Commit changes
+      run: |
+        git config --local user.email "somesh.rokz@gmail.com"
+        git config --local user.name "Som23Git"
+        git add .
+        git commit -m "Added new_node.js"
+        git push origin main
