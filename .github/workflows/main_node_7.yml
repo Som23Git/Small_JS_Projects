@@ -1,0 +1,30 @@
+name: Add hello_world_all.js
+  
+on:
+  schedule:
+    - cron: '05 7 * * *'
+  push:
+    branches:
+      - main
+
+jobs:
+  add_file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Schdedule time check
+        if: github.event.schedule == '05 7 * * *'
+        
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create hello_world.js
+        run: echo "console.log('Hello, world! ALL!!')" > hello_world_all.js
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "somesh.rokz@gmail.com"
+          git config --local user.name "Som23Git"
+          git add .
+          git commit -m "Added hello_world_all.js"
+          git push origin main
