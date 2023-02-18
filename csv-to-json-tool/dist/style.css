@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+  }
+  .drop-zone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  .drop-zone.active {
+    border-color: #3c78d8;
+  }
+  .drop-zone p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #999;
+  }
+
+  .download-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+  }
